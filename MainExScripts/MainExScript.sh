@@ -34,8 +34,8 @@ rmsExternal() {
 	printf "\n\n1. Reboot camera\n================\n"
 	"$LOCATION/ExScripts/Utils/CameraReboot.sh"
 
-	printf "\n\n2. Upload CapturedStack to www.starvisor.ru\n===========================================\n"
-	"$LOCATION/ExScripts/Starvisor/capstack.sh" $capt
+	#printf "\n\n2. Upload CapturedStack to www.starvisor.ru\n===========================================\n"
+	#"$LOCATION/ExScripts/Starvisor/capstack.sh" $capt
 
 	printf "\n\n3. Upload csv-files to cloud storages\n=====================================\n"
 	"$LOCATION/ExScripts/UploadCSV/UploadCSV.sh"
@@ -43,8 +43,8 @@ rmsExternal() {
 	printf "\n\n4. Starting Check_and_Clean\n===========================\n"
 	"$LOCATION/ExScripts/RMS_extra_tools/Check_and_Clean.sh" $capt
 
-	printf "\n\n5. Upload archives to FTP-storage\n=================================\n"
-	"$LOCATION/ExScripts/UpArchives/UpArchives.sh"
+	#printf "\n\n5. Upload archives to FTP-storage\n=================================\n"
+	#"$LOCATION/ExScripts/UpArchives/UpArchives.sh"
 
 	# Write uptime
 	"$LOCATION/ExScripts/Utils/Uptime_logger.sh"

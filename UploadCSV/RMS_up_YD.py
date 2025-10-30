@@ -77,6 +77,6 @@ if __name__ == "__main__":
     y=yadisk.YaDisk(token=TOKEN)
 
     check_YD_token(y, TOKEN)
-    YD_get_info(y)
+    #YD_get_info(y)
     recursive_upload(y, from_dir, to_dir)
-    share_link(y, to_dir)
+    #share_link(y, to_dir)

@@ -229,7 +229,7 @@ upload_files() {
 	python3 $LOCATION/RMS_up_YD.py $YDfold $tempFold/upload $YDtoken
 	# python3 SCRIPT CLOUD_FOLDER LOCAL_FOLDER TOKEN
 	echo $line
-	python $LOCATION/RMS_up_Dx.py $Dxfold $tempFold/upload $APP_KEY $SECRET_KEY $REFRESH_TOKEN
+	#python $LOCATION/RMS_up_Dx.py $Dxfold $tempFold/upload $APP_KEY $SECRET_KEY $REFRESH_TOKEN
 	# python3 SCRIPT CLOUD_FOLDER LOCAL_FOLDER APP_KEY SECRET_KEY REFRESH_TOKEN
 }
 
