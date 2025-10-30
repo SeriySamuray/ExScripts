@@ -3,6 +3,7 @@
 #################################################
 # Run external script in last processed folders #
 #################################################
+Station=$1
 
 # Activate RMS
 source $HOME/vRMS/bin/activate
@@ -14,7 +15,7 @@ capt=$(\
 	ls \
 		-t \
 		--directory \
-			$HOME/RMS_data/CapturedFiles/* \
+			$HOME/RMS_data/$Station/CapturedFiles/* \
 			| head -1\
 	)
 
@@ -24,7 +25,7 @@ arh=$(\
 		-t \
 		--directory \
 		--group-directories-first \
-			$HOME/RMS_data/ArchivedFiles/* \
+			$HOME/RMS_data/$Station/ArchivedFiles/* \
 			| head -1\
 	)
 

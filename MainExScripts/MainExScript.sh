@@ -34,8 +34,8 @@ rmsExternal() {
 
 	printf "\nCurrent captured dir: \n$capt \n==============================================================\n"
 
-	printf "\n\n1. Reboot camera\n================\n"
-	"$LOCATION/ExScripts/Utils/CameraReboot.sh"
+	#printf "\n\n1. Reboot camera\n================\n"
+	#"$LOCATION/ExScripts/Utils/CameraReboot.sh"
 
 	#printf "\n\n2. Upload CapturedStack to www.starvisor.ru\n===========================================\n"
 	#"$LOCATION/ExScripts/Starvisor/capstack.sh" $capt
@@ -50,10 +50,10 @@ rmsExternal() {
 	#"$LOCATION/ExScripts/UpArchives/UpArchives.sh"
 
 	# Write uptime
-	"$LOCATION/ExScripts/Utils/Uptime_logger.sh"
+	"$LOCATION/ExScripts/Utils/Uptime_logger.sh" $Station
 
-	printf "\n\n6. Reboot RPi...\n"
-	sudo reboot
+	#printf "\n\n6. Reboot RPi...\n"
+	#sudo reboot
 }
 
 
