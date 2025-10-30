@@ -15,7 +15,7 @@ get_log_dir(){
 					'/^log_dir:/{print $2}'\
 					 $HOME/source/Stations/$Station/.config\
 	)
-#	echo $log_fold
+	echo $log_fold
 }
 
 
