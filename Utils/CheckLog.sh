@@ -49,9 +49,9 @@ disp_log_lines(){
 
 main(){
 	get_log_dir
-	get_current_log
-	disp_info
-	disp_log_lines
+	#get_current_log
+	#disp_info
+	#disp_log_lines
 }
 
 
