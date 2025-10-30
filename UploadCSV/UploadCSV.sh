@@ -3,13 +3,20 @@
 #############################################################################################
 # Script for extracting CSV files from archives with sorting and uploading to cloud storage #
 #############################################################################################
+Station=$1
 
+#Archive folder:
+ARCH="$HOME/RMS_data/"$Station"/ArchivedFiles"
+#Folder with extracted files:
+CSV="$HOME/RMS_data/"$Station"/CSV"
+#Folder for temporal files:
+tempFold=$ARCH/temp
 
 # Path to the current script
-LOCATION=$(dirname $(readlink --canonicalize $0))
+LOCATION=$(dirname $(readlink --canonicalize $0))"/../.."
 
 # Read the configuration file
-source $LOCATION/.up_csv.cfg
+source $LOCATION/ExScripts/UploadCSV/.up_csv.cfg
 
 
 csv_list() {
@@ -226,7 +233,7 @@ ex_arch_csv() {
 upload_files() {
 	echo -e "Uploading csv-files..."
 	echo $line
-	python3 $LOCATION/RMS_up_YD.py $YDfold $tempFold/upload $YDtoken
+	python3 $LOCATION/ExScripts/UploadCSV/RMS_up_YD.py $YDfold $tempFold/upload $YDtoken
 	# python3 SCRIPT CLOUD_FOLDER LOCAL_FOLDER TOKEN
 	echo $line
 	#python $LOCATION/RMS_up_Dx.py $Dxfold $tempFold/upload $APP_KEY $SECRET_KEY $REFRESH_TOKEN

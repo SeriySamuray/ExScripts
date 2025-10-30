@@ -3,12 +3,15 @@
 ##################################################
 # Running postprocess scripts (external scripts) #
 ##################################################
+capture_dir="$(dirname "$1")"
+data_dir="$(dirname "$capture_dir")"
+Station="$(basename "$data_dir")"
 
 # CapturedFiles folder (RMS reports)
 capt=$1
 
 # Folder for writing logs
-LOG_DIR="$HOME/RMS_data/logs/ExScript"
+LOG_DIR="$HOME/RMS_data/"$Station"/logs/ExScript"
 
 # Folder with scripts location
 LOCATION=$(dirname \
@@ -38,7 +41,7 @@ rmsExternal() {
 	#"$LOCATION/ExScripts/Starvisor/capstack.sh" $capt
 
 	printf "\n\n3. Upload csv-files to cloud storages\n=====================================\n"
-	"$LOCATION/ExScripts/UploadCSV/UploadCSV.sh"
+	"$LOCATION/ExScripts/UploadCSV/UploadCSV.sh" $Station
 
 	printf "\n\n4. Starting Check_and_Clean\n===========================\n"
 	"$LOCATION/ExScripts/RMS_extra_tools/Check_and_Clean.sh" $capt
