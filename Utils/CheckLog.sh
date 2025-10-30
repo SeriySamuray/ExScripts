@@ -11,9 +11,9 @@ N=100
 
 # Get path to log folder from configuration file
 get_log_dir(){
-	log_fold="$HOME/RMS_data/$Station/"$(awk \
+	log_fold="$HOME/RMS_data/"$Station"/"$(awk \
 					'/^log_dir:/{print $2}'\
-					 $HOME/source/RMS/.config\
+					 $HOME/source/Stations/$Station/.config\
 	)
 #	echo $log_fold
 }
