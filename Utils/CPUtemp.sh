@@ -28,7 +28,7 @@ LOG_DIR="$HOME/RMS_data/logs/CPUtemp"
 dt=$(date '+%d/%m/%Y %H:%M:%S')
 
 # Get CPU temperature value
-tm=$(vcgencmd measure_temp | cut -d= -f2)
+tm=$(sensors 2>/dev/null | awk '/Package id 0/ {print $4}')
 
 # Create a log folder if it doesn't exist
 mkdir --parents $LOG_DIR
