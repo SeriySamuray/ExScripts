@@ -34,6 +34,6 @@ Station=$1
 
 
 WATCH_FILE="$HOME/RMS_data/$Station/live.jpg"
-SCRIPT="$HOME/source/ExScripts/ExScripts/Starvisor/live_vps.sh"
+SCRIPT="$HOME/source/ExScripts/Starvisor/live_vps.sh"
 
 printf "%s\n" "$WATCH_FILE" | entr -np "$SCRIPT" "$Station"
