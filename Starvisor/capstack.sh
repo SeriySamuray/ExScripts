@@ -3,7 +3,9 @@
 ###############################################################
 # Uploading the captured stack to the Starvisor website page. #
 ###############################################################
-Station=$1
+capture_dir="$(dirname "$1")"
+data_dir="$(dirname "$capture_dir")"
+Station="$(basename "$data_dir")"
 
 # Get values from config file
 # source $(dirname $0)/.starvisor.cfg

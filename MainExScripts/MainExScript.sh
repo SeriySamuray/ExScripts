@@ -38,7 +38,7 @@ rmsExternal() {
 	#"$LOCATION/ExScripts/Utils/CameraReboot.sh"
 
 	#printf "\n\n2. Upload CapturedStack to www.starvisor.ru\n===========================================\n"
-	#"$LOCATION/ExScripts/Starvisor/capstack.sh" $capt
+	"$LOCATION/ExScripts/Starvisor/capstack.sh" $capt
 
 	printf "\n\n3. Upload csv-files to cloud storages\n=====================================\n"
 	"$LOCATION/ExScripts/UploadCSV/UploadCSV.sh" $Station
