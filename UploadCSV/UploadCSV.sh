@@ -6,9 +6,9 @@
 Station=$1
 
 #Archive folder:
-ARCH="$HOME/RMS_data/"$Station"/ArchivedFiles"
+ARCH="$HOME/RMS_data/$Station/ArchivedFiles"
 #Folder with extracted files:
-CSV="$HOME/RMS_data/"$Station"/CSV"
+CSV="$HOME/RMS_data/$Station/CSV"
 #Folder for temporal files:
 tempFold=$ARCH/temp
 
@@ -16,7 +16,7 @@ tempFold=$ARCH/temp
 LOCATION=$(dirname $(readlink --canonicalize $0))"/../.."
 
 # Read the configuration file
-source $LOCATION/ExScripts/UploadCSV/.up_csv.cfg
+source "$HOME/source/Stations/$Station/.up_csv.cfg"
 
 
 csv_list() {
