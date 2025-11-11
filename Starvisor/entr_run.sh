@@ -3,7 +3,7 @@
 ########################################################
 # Run upload scripts when current stack is overwritten #
 ########################################################
-
+Station=$1
 
 # 1. Enable display of current stack in ~/RMS_data folder
 #
@@ -33,5 +33,7 @@
 # /home/rms/source/ExScripts/Starvisor/entr_run.sh &
 
 
-ls ~/RMS_data/live.jpg | entr -np $(dirname $0)/live_vps.sh
+WATCH_FILE="$HOME/RMS_data/$Station/live.jpg"
+SCRIPT="$HOME/source/ExScripts/ExScripts/Starvisor/live_vps.sh"
 
+printf "%s\n" "$WATCH_FILE" | entr -np "$SCRIPT" "$Station"

@@ -4,12 +4,14 @@
 # Uploading the current FF file to the Starvisor website page	    #
 # Uploading the current FF file to the server to create timelapses  #
 #####################################################################
+Station=$1
 
 # Get values from config file
-source $(dirname $0)/.starvisor.cfg
+# source $(dirname $0)/.starvisor.cfg
+source "$HOME/source/Stations/$Station/.starvisor.cfg"
 
 # Path to image
-live=$HOME/RMS_data/live.jpg
+live=$HOME/RMS_data/$Station/live.jpg
 
 
 # Upload to site

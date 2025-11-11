@@ -3,9 +3,11 @@
 ###############################################################
 # Uploading the captured stack to the Starvisor website page. #
 ###############################################################
+Station=$1
 
 # Get values from config file
-source $(dirname $0)/.starvisor.cfg
+# source $(dirname $0)/.starvisor.cfg
+source "$HOME/source/Stations/$Station/.starvisor.cfg"
 
 echo -e "Working: directory: \n$1\n"
 
