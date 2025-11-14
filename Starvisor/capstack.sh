@@ -9,7 +9,7 @@ Station="$(basename "$data_dir")"
 
 # Get values from config file
 # source $(dirname $0)/.starvisor.cfg
-source "$HOME/source/Stations/$Station/.starvisor.cfg"
+source "$HOME/source/Stations/$Station/starvisor.cfg"
 
 echo -e "Working: directory: \n$1\n"
 
