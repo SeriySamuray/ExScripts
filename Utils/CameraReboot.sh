@@ -3,14 +3,17 @@
 ########################
 # Camera Reboot Script #
 ########################
+
+# Check <Station> is passed
 if [ -z "$1" ]; then
     echo "Error, no <Station>." 
 	echo "Use: $0 <Station>"
     exit 1
 fi
 Station=$1
-PATH_CONFIG=/home/pi/source/Stations/$Station/.config
+PATH_CONFIG=$HOME/source/Stations/$Station/.config
 
+# Check <Station> is correct
 if [ -e "$PATH_CONFIG" ]; then
     # reboot
 	TF_CPP_MIN_LOG_LEVEL=3 python -m Utils.CameraControl reboot --config $PATH_CONFIG

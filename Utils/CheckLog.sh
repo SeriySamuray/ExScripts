@@ -3,7 +3,22 @@
 #############################################
 # Script for viewing the current log on SSH #
 #############################################
+
+# Check <Station> is passed
+if [ -z "$1" ]; then
+    echo "Error, no <Station>." 
+	echo "Use: $0 <Station>"
+    exit 1
+fi
 Station=$1
+PATH_Station=$HOME/RMS_data/$Station
+
+# Check <Station> is correct
+if [ ! -e "$PATH_Station" ]; then
+    echo "No such file or directory."
+	echo "Check <Station>"
+	exit 1
+fi
 
 # Number of lines of the current log to display
 N=100
